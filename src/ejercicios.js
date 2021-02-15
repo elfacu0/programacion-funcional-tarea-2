@@ -20,20 +20,15 @@ export const factorial = (n) => {
   }
 };
 
-export const multiplicacion = (nums = []) => {
-  return nums.reduce((acum, curr) => acum * curr, 1);
-};
-
+export const multiplicacion = (nums = []) =>
+  nums.reduce((acum, curr) => acum * curr, 1);
 // Funciones de lodash/fp que les pueden ser útiles a partir de este punto:
 // Las vistas en la clase (particularmente fp.flow y fp.curry)
 // fp.sortBy (para ordenar un array)
 // fp.reverse (para dar vuelta un array)
 // fp.first (para obtener el primer valor de un array)
 
-export const atributo = (attr) => (obj) => {
-  return obj[attr];
-};
-
+export const atributo = (attr) => (obj) => obj[attr];
 export const multiplicarAtributo = fp.curry((attr, obj) =>
   multiplicacion(atributo(attr)(obj))
 );
