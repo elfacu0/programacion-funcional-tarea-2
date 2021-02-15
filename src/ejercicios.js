@@ -12,11 +12,12 @@ export const fibo = (n, calculated = [1, 1]) => {
   return fibo(n, [...calculated, newNumber]);
 };
 
+// 1 line
+// export const factorial = (n) => (n <= 1 ? 1 : n * factorial(n - 1));
+
 export const factorial = (n) => {
   if (n <= 1) return 1;
-  if (n) {
-    return n * factorial(n - 1);
-  }
+  return n * factorial(n - 1);
 };
 
 export const multiplicacion = (nums = []) =>
